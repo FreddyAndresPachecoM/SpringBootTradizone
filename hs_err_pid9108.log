@@ -1,0 +1,69 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f6761c99a6a, pid=9108, tid=9117
+#
+# JRE version: OpenJDK Runtime Environment (15.0.2+7) (build 15.0.2+7-27)
+# Java VM: OpenJDK 64-Bit Server VM (15.0.2+7-27, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# J 672 c1 java.nio.DirectIntBufferU.get(I)I java.base@15.0.2 (33 bytes) @ 0x00007f6761c99a6a [0x00007f6761c998e0+0x000000000000018a]
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:34269 -Dmaven.home=EMBEDDED -Dclassworlds.conf=/home/ghost/Documents/workspace-spring-tool-suite-4-4.10.0.RELEASE/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf17216639560006261397.tmp -Dmaven.multiModuleProjectDirectory=/home/ghost/Documents/workspace-spring-tool-suite-4-4.10.0.RELEASE/tradiZone -Djansi.force=true -javaagent:/home/ghost/sts-4.10.0.RELEASE/configuration/org.eclipse.osgi/248/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 org.codehaus.plexus.classworlds.launcher.Launcher -Ppom.xml -B test -Dstyle.color=always
+
+Host: Intel(R) Pentium(R) CPU        P6100  @ 2.00GHz, 2 cores, 3G, Debian GNU/Linux 10 (buster)
+Time: Fri Apr  9 23:21:08 2021 EDT elapsed time: 8.575139 seconds (0d 0h 0m 8s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f677402b2b0):  JavaThread "main" [_thread_in_Java, id=9117, stack(0x00007f677899c000,0x00007f6778a9d000)]
+
+Stack: [0x00007f677899c000,0x00007f6778a9d000],  sp=0x00007f6778a99da0,  free space=1015k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J 672 c1 java.nio.DirectIntBufferU.get(I)I java.base@15.0.2 (33 bytes) @ 0x00007f6761c99a6a [0x00007f6761c998e0+0x000000000000018a]
+J 774 c1 jdk.internal.jimage.BasicImageReader.findLocation(Ljava/lang/String;Ljava/lang/String;)Ljdk/internal/jimage/ImageLocation; java.base@15.0.2 (115 bytes) @ 0x00007f6761cdaef4 [0x00007f6761cdab40+0x00000000000003b4]
+J 724 c1 jdk.internal.module.SystemModuleFinders$SystemModuleReader.findImageLocation(Ljava/lang/String;)Ljdk/internal/jimage/ImageLocation; java.base@15.0.2 (42 bytes) @ 0x00007f6761cb2f1c [0x00007f6761cb2c40+0x00000000000002dc]
+J 725 c1 jdk.internal.module.SystemModuleFinders$SystemModuleReader.find(Ljava/lang/String;)Ljava/util/Optional; java.base@15.0.2 (54 bytes) @ 0x00007f6761cb394c [0x00007f6761cb38c0+0x000000000000008c]
+J 1507 c1 jdk.internal.loader.BuiltinClassLoader$2.run()Ljava/util/List; java.base@15.0.2 (114 bytes) @ 0x00007f6761e8f6b4 [0x00007f6761e8f1a0+0x0000000000000514]
+j  jdk.internal.loader.BuiltinClassLoader$2.run()Ljava/lang/Object;+1 java.base@15.0.2
+J 902 c1 java.security.AccessController.executePrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object; java.base@15.0.2 (65 bytes) @ 0x00007f6761d39c24 [0x00007f6761d39ac0+0x0000000000000164]
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+9 java.base@15.0.2
+j  jdk.internal.loader.BuiltinClassLoader.findMiscResource(Ljava/lang/String;)Ljava/util/List;+83 java.base@15.0.2
+j  jdk.internal.loader.BuiltinClassLoader.findResource(Ljava/lang/String;)Ljava/net/URL;+95 java.base@15.0.2
+j  jdk.internal.loader.BootLoader.findResource(Ljava/lang/String;)Ljava/net/URL;+4 java.base@15.0.2
+j  java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL;+25 java.base@15.0.2
+j  java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL;+17 java.base@15.0.2
+j  java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL;+17 java.base@15.0.2
+j  org.codehaus.plexus.classworlds.realm.ClassRealm.getResource(Ljava/lang/String;)Ljava/net/URL;+2
+j  org.eclipse.sisu.space.URLClassSpace.getResource(Ljava/lang/String;)Ljava/net/URL;+5
+j  org.eclipse.sisu.space.IndexedClassFinder$1.hasMoreElements()Z+45
+j  org.eclipse.sisu.space.SpaceScanner.accept(Lorg/eclipse/sisu/space/SpaceVisitor;)V+58
+j  org.eclipse.sisu.space.SpaceModule.scanForElements(Lcom/google/inject/Binder;)V+25
+j  org.eclipse.sisu.space.SpaceModule.configure(Lcom/google/inject/Binder;)V+41
+j  org.eclipse.sisu.plexus.PlexusAnnotatedBeanModule.configure(Lcom/google/inject/Binder;)Lorg/eclipse/sisu/plexus/PlexusBeanSource;+12
+j  org.eclipse.sisu.plexus.PlexusBindingModule.configure(Lcom/google/inject/Binder;)V+37
+j  com.google.inject.spi.Elements$RecordingBinder.install(Lcom/google/inject/Module;)V+161
+j  com.google.inject.spi.Elements.getElements(Lcom/google/inject/Stage;Ljava/lang/Iterable;)Ljava/util/List;+40
+j  com.google.inject.spi.Elements.getElements(Ljava/lang/Iterable;)Ljava/util/List;+4
+j  org.eclipse.sisu.wire.WireModule.configure(Lcom/google/inject/Binder;)V+13
+j  com.google.inject.spi.Elements$RecordingBinder.install(Lcom/google/inject/Module;)V+161
+j  com.google.inject.spi.Elements.getElements(Lcom/google/inject/Stage;Ljava/lang/Iterable;)Ljava/util/List;+40
+j  com.google.inject.internal.InjectorShell$Builder.build(Lcom/google/inject/internal/Initializer;Lcom/google/inject/internal/ProcessedBindingData;Lcom/google/inject/internal/util/Stopwatch;Lcom/google/inject/internal/Errors;)Ljava/util/List;+122
+j  com.google.inject.internal.InternalInjectorCreator.build()Lcom/google/inject/Injector;+48
+j  com.google.inject.Guice.createInjector(Lcom/google/inject/Stage;Ljava/lang/Iterable;)Lcom/google/inject/Injector;+15
+j  com.google.inject.Guice.createInjector(Ljava/lang/Iterable;)Lcom/google/inject/Injector;+4
+j  com.google.inject.Guice.createInjector([Lcom/google/inject/Module;)Lcom/google/inject/Injector;+4
+j  org.codehaus.plexus.DefaultPlexusContainer.addPlexusInjector(Ljava/util/List;[Lcom/google/inject/Module;)Lcom/google/inject/Injector;+88
+j  org.codehaus.plexus.DefaultPlexusContainer.<init>(Lorg/codehaus/plexus/ContainerConfiguration;[Lcom/google/inject/Module;)V+396
+j  org.apache.maven.cli.MavenCli.container(Lorg/apache/maven/cli/CliRequest;)Lorg/codehaus/plexus/PlexusContainer;+275
+j  org.apache.maven.cli.MavenCli.doMain(Lorg/apache/maven/cli/CliRequest;)I+29
+j  org.apache.maven.cli.MavenCli.main([Ljava/lang/String;Lorg/codehaus/plexus/classworlds/ClassWorld;)I+24
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x7741b9]
